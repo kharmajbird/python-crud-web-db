@@ -1,0 +1,5 @@
+docker build -t kharmajbird/flask-book-api . && \
+
+docker run -p 8000:5000 kharmajbird/flask-book-api:latest
+
+##docker run -p 8000:5000 -v /Users/rileyescobar/src/python-crud-web-db/data:/data kharmajbird/flask-book-api:latest
