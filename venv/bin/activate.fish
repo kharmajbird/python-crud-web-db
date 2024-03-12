@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/rileyescobar/Desktop/TheAll/src/orig.pythos-crud-web-db/venv"
+set -gx VIRTUAL_ENV "/Users/rileyescobar/Desktop/TheAll/src/python-crud-web-db/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

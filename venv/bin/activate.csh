@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/rileyescobar/Desktop/TheAll/src/orig.pythos-crud-web-db/venv"
+setenv VIRTUAL_ENV "/Users/rileyescobar/Desktop/TheAll/src/python-crud-web-db/venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
