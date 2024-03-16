@@ -15,18 +15,24 @@ app.config["SQLALCHEMY_DATABASE_URI"] = database_file
 db = SQLAlchemy(app)
 
 class Book(db.Model):
-    title = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    ##title = db.Column(db.String(80), unique=True, nullable=False, primary_key=True)
+    title = db.Column(db.String(80), unique=True, primary_key=True)
+    author = db.Column(db.String(80), nullable=True, primary_key=False)
 
     def __repr__(self):
         return "<Title: {}>".format(self.title)
+        #return "<Author: {}>".format(self.author)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     books = None
     if request.form:
         try:
-            book = Book(title=request.form.get("title"))
-            db.session.add(book)
+            ##book = Book(title=request.form.get("title"))
+            book1 = Book(title=request.form.get("title"))
+            book2 = Book(author=request.form.get("author"))
+            db.session.add(book1)
+            db.session.add(book2)
             db.session.commit()
 
         except Exception as e:

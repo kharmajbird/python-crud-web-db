@@ -3,10 +3,16 @@
     <h1>Add book</h1>
     <form method="POST" action="/">
       <input type="text" name="title">
+<!--
+      <input type="submit" value="Add">
+-->
+    </form>
+    <form method="POST" action="/">
+      <input type="text" name="author">
       <input type="submit" value="Add">
     </form>
 
-    <h1>Books</h1>
+    <h1>Books/Titles</h1>
     <table>
       {% for book in books %}
         <tr>
