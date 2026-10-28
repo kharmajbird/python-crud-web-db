@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image for Python application
-                    sh 'docker build -t python-app "/home/jlewis/src/python-crud-web-db"'
+                    sh 'docker build -t python-crud-db "/home/jlewis/src/python-crud-web-db"'
                 }
             }
         }
