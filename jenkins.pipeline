@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+    stages {
+    
+        stage('Dockerize') {
+            steps {
+                script {
+                    // Build Docker image for Python application
+                    sh 'docker build -t python-app "/home/jlewis/src/python-crud-web-db"'
+                }
+            }
+        }
+        
+        stage('Deploy to Minikube') {
+            steps {
+                // Apply Kubernetes deployment using the Kubernetes service account
+                withCredentials([string(credentialsId: '899e6cd3-723a-4d35-a28e-8d23e679c94e', variable: 'KUBE_SA_TOKEN')]) {
+                    sh """
+                        kubectl apply -f "/home/jlewis/src/python-crud-web-db/deployment.yaml" \
+                        --server=http://127.0.0.1:44811 \
+                        --insecure-skip-tls-verify
+                    """
+                }
+            }
+        }
+    }
+}

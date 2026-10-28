@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-crud-db
+  template:
+    metadata:
+      labels:
+        app: python-crud-db
+    spec:
+      containers:
+        - name: python-app-container
+          image: docker.io/library/python-crud-db:latest
+          imagePullPolicy: Never
+          # imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+
