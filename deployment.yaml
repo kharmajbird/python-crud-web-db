@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-app-deployment
+  name: python-crud-deployment
 spec:
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec:
         app: python-crud-db
     spec:
       containers:
-        - name: python-app-container
+        - name: python-crud-container
           image: docker.io/library/python-crud-db:latest
           imagePullPolicy: Never
           # imagePullPolicy: Always

@@ -4,11 +4,11 @@ systemctl start jenkins
 
 # expose port in minikube:
 
-kubectl expose deployment/python-app-deployment \
+kubectl expose deployment/python-crud-deployment \
     --type='NodePort' \
     --port=5000
 
-kubectl port-forward svc/python-app-deployment 5000:5000
+kubectl port-forward svc/python-crud-deployment 5000:5000
 
 minikube dashboard --url &
 
