@@ -1,7 +1,7 @@
 ### First stage
 FROM python:3
 
-RUN mkdir /app
+RUN mkdir /app /data
 WORKDIR /app
 ADD . /app/
 
