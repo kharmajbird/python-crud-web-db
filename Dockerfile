@@ -7,7 +7,7 @@ RUN mkdir /app/data
 WORKDIR /app
 ADD . /app/
 
-RUN pip install flask flask_sqlalchemy
+##RUN pip install flask flask_sqlalchemy
 #RUN python3 -m venv venv
 
 EXPOSE 5000

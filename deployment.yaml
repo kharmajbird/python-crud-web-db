@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-crud-deployment
+  name: python-crud-web-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: python-crud-db
+      app: python-crud-web-db
   template:
     metadata:
       labels:
-        app: python-crud-db
+        app: python-crud-web-db
     spec:
       containers:
         - name: python-crud-container
-          image: docker.io/library/python-crud-db:latest
-          imagePullPolicy: Never
-          # imagePullPolicy: Always
+          image: kharmajbird/python-crud-web-db:latest
+          ## imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
 

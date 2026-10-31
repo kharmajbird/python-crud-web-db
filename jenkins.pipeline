@@ -1,3 +1,5 @@
+# must change localhost port each time minikube dashboard restarts
+
 pipeline {
     agent any
     
@@ -7,7 +9,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image for Python application
-                    sh 'docker build -t python-crud-db "/home/jlewis/src/python-crud-web-db"'
+                    sh 'docker build -t kharmajbird/python-crud-web-db "/home/jlewis/src/python-crud-web-db"'
                 }
             }
         }
@@ -19,11 +21,12 @@ pipeline {
                     sh """
                         kubectl apply -f "/home/jlewis/src/python-crud-web-db/deployment.yaml" \
                         --token="$KUBE_SA_TOKEN" \
-                        --server=http://127.0.0.1:44811 \
+                        --server=http://127.0.0.1:38757 \
                         --insecure-skip-tls-verify
                     """
                 }
             }
         }
     }
+
 }
