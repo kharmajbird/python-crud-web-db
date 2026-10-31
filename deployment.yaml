@@ -13,10 +13,10 @@ spec:
         app: python-crud-web-db
     spec:
       containers:
-        - name: python-crud-container
-          image: kharmajbird/python-crud-web-db:latest
-          ## imagePullPolicy: Never
-          imagePullPolicy: Always
+        - name: python-crud-web-db-container
+          image: docker.io/kharmajbird/python-crud-web-db:latest
+          imagePullPolicy: Never
+          ## imagePullPolicy: Always
           ports:
             - containerPort: 5000
 
